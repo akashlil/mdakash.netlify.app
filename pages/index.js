@@ -1,21 +1,16 @@
 import Head from "next/head";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
+import Slider from "@components/Slider/Slider";
+import Meta from "@components/Meta";
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Akash</title>
-        <link rel="icon" href="/favicon.ico" />
+        <Meta title="Akash" desp="kjssjb" keywords="Profiler,protfilo" />
       </Head>
       <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          wellcome<code>akash</code>
-        </p>
+        <Slider />
       </main>
-      <Footer />
     </div>
   );
 }
