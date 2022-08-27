@@ -65,13 +65,7 @@ const Slider = () => {
                       A{" "}
                       <span className={sildercss.shortDesp}>Web Developer</span>{" "}
                       From{" "}
-                      <span
-                        style={{
-                          color: "red",
-                          fontWeight: "bold",
-                          fontSize: "25px",
-                        }}
-                      >
+                      <span className={sildercss.typewritertext}>
                         {text}
                         <Cursor cursorStyle="_" />
                       </span>
