@@ -5,13 +5,13 @@ import LoadData from "@components/LoadData/LoadData";
 const Project = () => {
   const [projects, setProject] = useState(null);
 
-  // useEffect(() => {
-  //   fetch("/api/projects")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setProject(data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch("/api/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        setProject(data);
+      });
+  }, []);
 
   return (
     <div>
