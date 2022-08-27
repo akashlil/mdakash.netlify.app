@@ -1,0 +1,66 @@
+.loginBtn{
+  /* background-color: transparent; */
+  text-align: center;
+  border: 1px solid #ffffff !important;
+  color: aliceblue !important;
+  font-family: "Euclid Circular A", Akzidenz, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 10px;
+
+}
+
+.loginBg{
+/* background-color: #ffffff; */
+color: black;
+}
+
+.loginBtn:hover{
+    color: rgb(28, 45, 56);
+    background-color: #154aa6;
+    box-shadow: #c161f3 0px 0px 0px 3px
+}
+
+.header{
+    font-family: "MongoDB Value Serif", "Times New Roman", serif;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 32px;
+    margin-top: 15vh;
+}
+
+
+.backRoundImg{
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center ;
+  z-index: -1;
+}
+
+
+.postionSecendSection{
+  margin: 15vh 50px 50px 15vh !important;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+  .backRoundImg{
+    min-height: 0vh;
+    max-height: 0vh;
+  }
+ 
+}
+@media only screen and (max-width: 500px) {
+
+  .postionSecendSection{
+    margin: 20px 0 0 0 !important;
+  }
+  
+ 
+}
+
+
