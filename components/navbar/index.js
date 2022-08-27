@@ -20,7 +20,7 @@ export default function Navbar() {
   //     dispatch(logOut());
   //   }
   // };
-  let user = true;
+  let user = false;
 
   return (
     <nav className="container navbar navbar-expand-lg navbar-light py-5">
