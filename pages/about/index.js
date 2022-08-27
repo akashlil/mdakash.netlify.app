@@ -1,5 +1,3 @@
-import styles from "../../styles/Home.module.css";
-
 const About = () => {
   const imgPro = "https://i.ibb.co/Gsqv4D7/Untitled-design-1.png";
 
