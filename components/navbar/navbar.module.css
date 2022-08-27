@@ -1,0 +1,45 @@
+
+.navtextcolor {
+    margin-right:10px;
+    font-weight: bolder;
+    color: #ffff !important;
+    text-align: center;
+    border:1px solid #ffffff;
+    font-family: "Euclid Circular A", Akzidenz, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 10px;
+    border-radius: 5px 15px;
+    
+  }
+  
+  .navtextcolor:hover {
+    color: rgb(28, 45, 56);
+    background-color: #404352;
+    box-shadow: #80475c 0px 0px 0px 3px;
+    padding: auto;
+  }
+  @media only screen and (max-width: 600px) {
+    .nav-item:last-child {
+      order: -1;
+    }
+   .navtextcolor {
+      border-radius: 5px;
+      padding: 5px !important;
+
+    }
+  }
+
+
+  .logOut{
+    background-color: transparent;
+    text-align: center;
+    border: 1px solid #ffffff !important;
+    /* color: aliceblue!important; */
+    font-family: "Euclid Circular A", Akzidenz, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 10px;
+    outline: none;
+    transition: 1s ease-in-out;
+    
+
+  }
+
+  
