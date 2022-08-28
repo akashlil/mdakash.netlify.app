@@ -1,13 +1,13 @@
   
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
 .typewritertext{
   color: red;
   font-weight: bold;
-  font-size: 18px !important;
-}
+  font-size: 1.2rem !important;
+ 
+  }
+} 
 
-
-  } 
 
   
   .btna134f6{
