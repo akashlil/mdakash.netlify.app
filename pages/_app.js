@@ -1,6 +1,8 @@
 import Layout from "@components/layout";
 import "@styles/globals.css";
+import { Provider } from "react-redux";
 
+import store from "../rudex/store";
 function Application({ Component, pageProps }) {
   return (
     <div>
@@ -10,10 +12,11 @@ function Application({ Component, pageProps }) {
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
         crossOrigin="anonymous"
       />
-
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Provider store={store}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Provider>
 
       <div>
         <script
