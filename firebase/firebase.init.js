@@ -4,7 +4,12 @@ import { getAnalytics } from "firebase/analytics";
 import firebaseConfig from "./firebase.config";
 
 const firebaseInitializeApp = () => {
-  initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
+  if (typeof window != "undefined") {
+    if ("measurementId" in firebaseConfig) {
+      const analytics = getAnalytics(app);
+    }
+  }
 };
 
 export default firebaseInitializeApp;
