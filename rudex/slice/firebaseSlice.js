@@ -6,15 +6,15 @@ const firebaseSlice = createSlice({
     user: "akas",
   },
   reducers: {
-    logIn(state, action) {
+    signIn: (state, action) => {
       state.user = action.payload.user;
     },
-    logOut(state, action) {
+    signOut: (state, action) => {
       state.user = null;
     },
   },
 });
 
-export const firebaseActions = firebaseSlice.actions;
+export const { signIn, signOut } = firebaseSlice.actions;
 
 export default firebaseSlice;
