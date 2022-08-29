@@ -82,8 +82,8 @@
   line-height: 42px;
   padding: 0;
   border: none;
-  background: #a134f6 !important;
-  /* background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%); */
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0, 213, 255, 0.79) 100%) !important;
+  
 }
 .btn5:hover {
   color: #ffffff;
