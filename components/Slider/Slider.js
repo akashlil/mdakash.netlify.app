@@ -74,17 +74,19 @@ const Slider = () => {
                       I'm Web Developer based in BD, and I'm very passionate and
                       dedicated to my work.
                     </p>
-                    <Link href="/show/all/product">
-                      <a className="rounder-3">
-                        <button
-                          className={[sildercss.btn5, sildercss.customBtn].join(
-                            " "
-                          )}
-                        >
-                          Hire Me
-                        </button>
-                      </a>
-                    </Link>
+                    <a
+                      className="rounder-3"
+                      href="../../pubilc/MD Akash.pdf"
+                      download
+                    >
+                      <button
+                        className={[sildercss.btn5, sildercss.customBtn].join(
+                          " "
+                        )}
+                      >
+                        My Resume Download
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="col-md-5 ">
