@@ -21,6 +21,10 @@ html,body {
   margin: 0 !important;
   padding: 0 !important;
 }
+ul{
+  padding: 0 !important;
+  margin: 0px !important;
+}
 ul>li{
   list-style: none !important;
 }
