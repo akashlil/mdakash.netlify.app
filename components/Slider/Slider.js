@@ -77,10 +77,9 @@ const Slider = () => {
                     <Link href="/show/all/product">
                       <a className="rounder-3">
                         <button
-                          className={[
-                            "btn col-md-4 mx-auto btn-lg text-white rounded-pill",
-                            sildercss.btna134f6,
-                          ].join(" ")}
+                          className={[sildercss.btn5, sildercss.customBtn].join(
+                            " "
+                          )}
                         >
                           Hire Me
                         </button>

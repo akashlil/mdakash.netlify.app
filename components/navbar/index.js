@@ -42,13 +42,15 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav text-uppercase d-flex align-items-center  ms-auto mb-2 mb-lg-0 middle-part ">
+          <ul className="navbar-nav text-uppercase d-flex align-items-center  ms-auto mb-lg-0 middle-part ">
             <li className={navstyle.navitem}>
               <Link href="/">
                 <a
-                  className={["nav-link active", navstyle.navtextcolor].join(
-                    " "
-                  )}
+                  className={[
+                    "nav-link active",
+                    navstyle.customBtn,
+                    navstyle.btn5,
+                  ].join(" ")}
                 >
                   Home
                 </a>
@@ -56,7 +58,13 @@ export default function Navbar() {
             </li>
             <li className="nav-item ">
               <Link href="/about">
-                <a className={["nav-link", navstyle.navtextcolor].join(" ")}>
+                <a
+                  className={[
+                    "nav-link",
+                    navstyle.customBtn,
+                    navstyle.btn5,
+                  ].join(" ")}
+                >
                   My About
                 </a>
               </Link>
@@ -64,14 +72,26 @@ export default function Navbar() {
 
             <li className="nav-item ">
               <Link href="/project">
-                <a className={["nav-link", navstyle.navtextcolor].join(" ")}>
+                <a
+                  className={[
+                    "nav-link",
+                    navstyle.customBtn,
+                    navstyle.btn5,
+                  ].join(" ")}
+                >
                   Project
                 </a>
               </Link>
             </li>
             <li className="nav-item ">
               <Link href="/contact">
-                <a className={["nav-link", navstyle.navtextcolor].join(" ")}>
+                <a
+                  className={[
+                    "nav-link",
+                    navstyle.customBtn,
+                    navstyle.btn5,
+                  ].join(" ")}
+                >
                   Contact
                 </a>
               </Link>
@@ -79,7 +99,13 @@ export default function Navbar() {
             <li className="nav-item">
               {!user ? (
                 <Link href="/login">
-                  <a className={["nav-link", navstyle.navtextcolor].join(" ")}>
+                  <a
+                    className={[
+                      "nav-link",
+                      navstyle.customBtn,
+                      navstyle.btn5,
+                    ].join(" ")}
+                  >
                     Login
                   </a>
                 </Link>
@@ -87,7 +113,8 @@ export default function Navbar() {
                 <button
                   className={[
                     "btn btn-md  me-2 me-md-0",
-                    navstyle.navtextcolor,
+                    navstyle.customBtn,
+                    navstyle.btn5,
                   ].join(" ")}
                   /* onClick={logOuts} */
                 >

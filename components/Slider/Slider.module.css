@@ -10,16 +10,12 @@
 
 
   
-  .btna134f6{
-   background-color: #571688d1;
-  }
-
 
   .shortDesp{
    color: #f75023;
   }
   .shortTitle{
-    color: #a134f6;
+    color: #c18de9;
   }
 
   .headerImg  {
@@ -57,4 +53,67 @@
   font-size: 25px;
 }
 
+
+/* 5 */
+
+
+.customBtn {
+  width: 230px !important;
+  height: 50px !important;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn5 {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: #a134f6 !important;
+  /* background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%); */
+}
+.btn5:hover {
+  color: #ffffff;
+  background: transparent;
+  box-shadow:none;
+}
+.btn5:before,
+.btn5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:4px;
+  width:0;
+  background: #ffffff;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn5:hover:before,
+.btn5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
 

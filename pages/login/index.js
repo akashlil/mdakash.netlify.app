@@ -24,10 +24,10 @@ const Loing = () => {
   };
 
   const user = useSelector((state) => state.firebaseState.user);
-  console.log(user);
+  console.log(user.email);
 
-  if (user?.email) {
-    router.replace("/");
+  if (user?.email === "akashlil393@gmail.com") {
+    router.replace("/admin");
     return;
   } else {
     return (
