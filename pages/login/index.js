@@ -4,9 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import firebaseInitializeApp from "../../firebase/firebase.init";
 import { signIn } from "../../rudex/slice/firebaseSlice";
+import { useEffect, useState } from "react";
+import { async } from "@firebase/util";
+
 firebaseInitializeApp();
 
-const Loing = () => {
+const Loing = ({ succcfullUser }) => {
+  // const [succcfullUser, setsucccfullUser] = useState(succcfullUser);
+  /* Google login */
   let googleProvider = new GoogleAuthProvider();
   let auth = getAuth();
 
@@ -22,21 +27,68 @@ const Loing = () => {
       );
     });
   };
+  /* Google login end*/
 
+  /* google user */
   const user = useSelector((state) => state.firebaseState.user);
   console.log(user.email);
+  /* google user end*/
 
-  if (user?.email === "akashlil393@gmail.com") {
-    router.replace("/admin");
-    return;
-  } else {
-    return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="d-grid gap-2 col-md-4 col-12">
+  /* show password */
+  const showPassword = () => {
+    let element = document.getElementById("passShow");
+
+    if (element.type == "password") {
+      element.type = "text";
+    } else if (element.type == "text") {
+      element.type = "password";
+    } else {
+      element.type = "password";
+    }
+  };
+  /* show password end */
+
+  /* from data submit */
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const [userAdmin] = succcfullUser;
+    console.log(userAdmin);
+    const data = {
+      email: event.target.email.value,
+      password: event.target.password.value,
+    };
+
+    if (userAdmin.email == data.email && userAdmin.password == data.password) {
+      const seessionUser = {
+        email: userAdmin.email,
+        parmison: "admin",
+      };
+
+      const jsonData = JSON.stringify(seessionUser);
+      sessionStorage.setItem("user", jsonData);
+      return router.push("/admin");
+    } else {
+      router.replace("/login");
+      event.target.email.value = "";
+      event.target.password.value = "";
+      return 0;
+    }
+  };
+
+  /* from data submit end */
+  return (
+    <div className="container-fluid">
+      <div className="row">
+        <div className="d-grid gap-2 col-md-4 col-12">
+          <div className="col-md-12">
+            {" "}
             <h1 className={loginCss.header}>Log in to your account</h1>
             <button
-              className={["btn-lg btn", loginCss.loginBtn].join(" ")}
+              className={[
+                "btn-lg btn col-md-10 col-12 my-3",
+                loginCss.loginBtn,
+              ].join(" ")}
               onClick={logIn}
             >
               <svg width="52" height="52" role="img">
@@ -79,7 +131,12 @@ const Loing = () => {
               </svg>
               Google
             </button>
-            <button className={["btn-lg btn", loginCss.loginBtn].join(" ")}>
+            <button
+              className={[
+                "btn-lg btn col-md-10 col-12",
+                loginCss.loginBtn,
+              ].join(" ")}
+            >
               <svg
                 width="52"
                 height="52"
@@ -100,35 +157,96 @@ const Loing = () => {
               GitHub
             </button>
           </div>
+        </div>
 
-          <div className="d-grid gap-2 col-md-8 col-12 position-relative">
-            <div className="">
-              <img
-                src="https://cdn.wallpapersafari.com/77/89/ms3kKF.jpg"
-                alt=""
-                className={[
-                  "img-fluid position-absolute col-md-12 col-6 w-100",
-                  loginCss.backRoundImg,
-                ].join(" ")}
-              />
-              <div className={["", loginCss.postionSecendSection].join(" ")}>
-                <div className="col-md-5">
-                  <h2 className="mb-3">
+        <div className="d-grid gap-2 col-md-8 col-12 position-relative">
+          <div className="">
+            <img
+              src="https://cdn.wallpapersafari.com/77/89/ms3kKF.jpg"
+              alt=""
+              className={[
+                "img-fluid position-absolute col-md-12 col-6 w-100",
+                loginCss.backRoundImg,
+              ].join(" ")}
+            />
+            <div className={["", loginCss.postionSecendSection].join(" ")}>
+              <div className="col-md-9">
+                <div className="shadow-sm text-dark bg-body rounded-5">
+                  <div className="p-5">
                     {" "}
-                    Deliver App Search Fast with Atlas Search
-                  </h2>
-
-                  <p>
-                    Build rich full-text search features into your applications
-                    without syncing your database to a separate search engine.
-                  </p>
+                    <h3 className="mb-3" style={{ color: "#3e34b5" }}>
+                      Login
+                    </h3>
+                    <form onSubmit={handleSubmit} method="post">
+                      <div className="mb-3 ">
+                        <label
+                          htmlFor="formGroupExampleInput"
+                          className="form-label"
+                        >
+                          Email
+                        </label>
+                        <input
+                          type="eamil"
+                          className="form-control p-2"
+                          id="email"
+                          name="email"
+                          placeholder="Email"
+                        />
+                      </div>
+                      <div className="mb-3">
+                        <label
+                          htmlFor="formGroupExampleInput"
+                          className="form-label"
+                        >
+                          Password
+                        </label>
+                        <div className="input-group">
+                          <input
+                            type="password"
+                            className="form-control"
+                            id="passShow"
+                            name="password"
+                            placeholder="Password"
+                          />
+                          <div className="input-group-text">
+                            <span className="pe-3">show</span>
+                            <input
+                              className="form-check-input mt-0 py-3 px-3 border "
+                              type="checkbox"
+                              placeholder="click"
+                              value=""
+                              onClick={() => showPassword()}
+                              aria-label="Checkbox for following text input"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        type="submit"
+                        className="btn next col-12 btn-primary py-3 rounded-3 "
+                      >
+                        Login
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 };
+
 export default Loing;
+
+export async function getServerSideProps(req, res) {
+  const respones = await fetch("http://localhost:3000/api/admin");
+  const succcfullUser = await respones.json();
+  return {
+    props: {
+      succcfullUser,
+    },
+  };
+}
