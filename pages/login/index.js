@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import firebaseInitializeApp from "../../firebase/firebase.init";
 import { signIn } from "../../rudex/slice/firebaseSlice";
-import { useEffect, useState } from "react";
-import { async } from "@firebase/util";
 
 firebaseInitializeApp();
 
@@ -242,7 +240,7 @@ const Loing = ({ succcfullUser }) => {
 export default Loing;
 
 export async function getServerSideProps(req, res) {
-  const respones = await fetch("http://localhost:3000/api/admin");
+  const respones = await fetch("https://mdakash.netlify.app/api/admin");
   const succcfullUser = await respones.json();
   return {
     props: {
