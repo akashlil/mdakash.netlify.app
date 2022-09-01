@@ -42,7 +42,7 @@ const Admin = ({ userveryfite }) => {
 export default Admin;
 
 export async function getServerSideProps({ req, res }) {
-  const respones = await fetch("http://localhost:3000/api/admin");
+  const respones = await fetch("https://mdakash.netlify.app/api/admin");
   const userveryfite = await respones.json();
 
   return {
