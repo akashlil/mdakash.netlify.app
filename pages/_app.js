@@ -12,7 +12,7 @@ function Application({ Component, pageProps }) {
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
         crossOrigin="anonymous"
       />
-
+      <Script src="https://cdn.jsdelivr.net/npm/jquery-slimscroll@1.3.8/jquery.slimscroll.js"></Script>
       <Provider store={store}>
         <Layout>
           <Component {...pageProps} />
