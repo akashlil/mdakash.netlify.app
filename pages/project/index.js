@@ -23,21 +23,21 @@ const Project = () => {
             <div className="col" key={project._id}>
               <div className="card h-100">
                 <img
-                  src={project.imageslink}
+                  src={project?.imageslink}
                   className="card-img-top"
                   alt="..."
                 />
 
                 <div className="card-body">
                   <h5 className="card-title text-capitalize">
-                    {project.title.slice(0, 20)}
+                    {project?.title?.slice(0, 20)}
                   </h5>
                   <a
                     className={["card-text", projectStyle.couser].join(" ")}
                     href={project.livelink}
                     target="_blanck"
                   >
-                    live Link : {project.livelink.slice(0, 50)}....
+                    live Link : {project?.livelink?.slice(0, 50)}....
                   </a>
                 </div>
                 <div className="card-footer">

@@ -1,19 +1,16 @@
 import React from "react";
-import Footer from "../Footer/Footer";
-import SideBar from "../SideBar/SideBar";
 import TobBar from "../TopBar/TobBar";
-import Script from "next/script";
+
 const MainContent = ({ children }) => {
   return (
-    <div>
+    <div className="container-fluid px-0">
       <TobBar></TobBar>
-      <SideBar></SideBar>
 
-      <div>
-        <div className="row">{children}</div>
+      <div className="container">
+        <div className="row">
+          <div>{children}</div>
+        </div>
       </div>
-
-      <Footer></Footer>
     </div>
   );
 };
