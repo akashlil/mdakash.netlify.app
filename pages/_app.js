@@ -1,8 +1,8 @@
 import Layout from "@components/layout";
 import "@styles/globals.css";
 import { Provider } from "react-redux";
-
 import store from "../rudex/store";
+import Script from "next/script";
 function Application({ Component, pageProps }) {
   return (
     <div>
@@ -19,11 +19,11 @@ function Application({ Component, pageProps }) {
         </Layout>
       </Provider>
       <div>
-        <script
+        <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
           crossOrigin="anonymous"
-        ></script>
+        ></Script>
       </div>
     </div>
   );

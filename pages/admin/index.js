@@ -1,6 +1,5 @@
-import Home from "@components/Deshboard/Home/Home";
-import ProjectAdd from "@components/Deshboard/ProjectAdd/ProjectAdd";
-import DashBoardHome from "@components/layout/DashBoardLayout/DashBoardHome";
+import HomeDash from "@components/Deshboard/Home";
+import MainContent from "@components/LayoutDashboard/MainContent/MainContent";
 import { useRouter } from "next/router";
 import useSessionStorage from "../../hook/useSessionStorage";
 
@@ -16,21 +15,21 @@ const Admin = ({ userveryfite }) => {
     if (userDatastringfy?.parmison == userDatastringfy?.parmison) {
       if (page == "dashboard") {
         return (
-          <DashBoardHome>
-            <Home></Home>
-          </DashBoardHome>
+          <MainContent>
+            <HomeDash></HomeDash>
+          </MainContent>
         );
       } else if (page == "projectadd") {
         return (
-          <DashBoardHome>
+          <MainContent>
             <ProjectAdd></ProjectAdd>
-          </DashBoardHome>
+          </MainContent>
         );
       } else {
         return (
-          <DashBoardHome>
-            <Home></Home>
-          </DashBoardHome>
+          <MainContent>
+            <HomeDash></HomeDash>
+          </MainContent>
         );
       }
     }

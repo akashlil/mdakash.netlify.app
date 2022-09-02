@@ -13,9 +13,7 @@ const Layout = ({ children }) => {
   } else if (router.asPath == "/admin") {
     showNavBar = false;
   } else if (router.asPath == `/admin?p=${adminRouer}`) {
-    console.log(adminRouer);
     showNavBar = false;
-    console.log(showNavBar);
   }
   return (
     <>
