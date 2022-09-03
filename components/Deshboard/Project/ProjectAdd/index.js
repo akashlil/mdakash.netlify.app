@@ -61,7 +61,7 @@ const ProjectAdd = () => {
               onSubmit={projectSubmit}
             >
               <div className="mb-3 ">
-                <label for="tittle" className="form-label">
+                <label htmlFor="tittle" className="form-label">
                   Tittle
                 </label>
                 <input

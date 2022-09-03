@@ -1,10 +1,11 @@
 import HomeDash from "@components/Deshboard/Home";
-import ProjectAdd from "@components/Deshboard/Project/ProjectAdd.js";
+import ProjectAdd from "@components/Deshboard/Project/ProjectAdd";
+import ProjectRemove from "@components/Deshboard/Project/ProjectRemove";
 import MainContent from "@components/LayoutDashboard/MainContent/MainContent";
 import { useRouter } from "next/router";
 import useSessionStorage from "../../hook/useSessionStorage";
 
-const Admin = ({ userveryfite }) => {
+const Admin = ({ userveryfite, projectsall }) => {
   let userDatastringfy = useSessionStorage("user");
   const [userData] = userveryfite;
 
@@ -24,6 +25,12 @@ const Admin = ({ userveryfite }) => {
         return (
           <MainContent>
             <ProjectAdd></ProjectAdd>
+          </MainContent>
+        );
+      } else if (page == "projectremove") {
+        return (
+          <MainContent>
+            <ProjectRemove></ProjectRemove>
           </MainContent>
         );
       } else {

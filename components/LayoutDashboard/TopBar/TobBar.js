@@ -3,11 +3,12 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const TobBar = () => {
+  const href = "/";
   const router = useRouter();
   const logOutadmin = () => {
     sessionStorage.removeItem("user");
     sessionStorage.clear();
-    router.replace("/home");
+    router.replace(href);
   };
 
   return (
@@ -60,9 +61,9 @@ const TobBar = () => {
                   </li>
                   <hr className="dropdown-divider" />
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Project Reomve
-                    </a>
+                    <Link href="?p=projectremove">
+                      <a className="dropdown-item">Project Reomve</a>
+                    </Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
@@ -88,11 +89,9 @@ const TobBar = () => {
                 </a>
                 <ul className="dropdown-menu  dropdown-menu-dark">
                   <li>
-                    <Link href="?p=projectadd">
-                      <a className="dropdown-item" onClick={logOutadmin}>
-                        Log Out
-                      </a>
-                    </Link>
+                    <a className="dropdown-item" onClick={logOutadmin}>
+                      Log Out
+                    </a>
                   </li>
 
                   <li>

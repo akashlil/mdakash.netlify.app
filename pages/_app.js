@@ -12,6 +12,26 @@ function Application({ Component, pageProps }) {
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
         crossOrigin="anonymous"
       />
+
+      {/* data table */}
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"
+      />
+
+      <script
+        type="text/javascript"
+        charset="utf8"
+        src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"
+      ></script>
+
+      <script
+        type="text/javascript"
+        src="https://code.jquery.com/jquery-3.5.1.js"
+      ></script>
+      {/* data table End */}
+
       <Provider store={store}>
         <Layout>
           <Component {...pageProps} />
