@@ -49,11 +49,24 @@ const Admin = ({ userveryfite }) => {
 export default Admin;
 
 export async function getServerSideProps({ req, res }) {
-  const respones = await fetch("https://mdakash.netlify.app/api/admin");
-  const userveryfite = await respones.json();
+  const respones1 = await fetch("https://mdakash.netlify.app/api/admin");
+  const userveryfite = await respones1.json();
 
+  // const respones2 = await fetch("https://mdakash.netlify.app/api/projects");
+  // const projects = await respones2.json();
+
+  // const [operationsRes, incidentsRes] = await Promise.all([
+  //   fetch(`https://mdakash.netlify.app/api/admin`),
+  //   fetch(`https://mdakash.netlify.app/api/projects`),
+  // ]);
+  // const [operations, incidents] = await Promise.all([
+  //   operationsRes.json(),
+  //   incidentsRes.json(),
+  // ]);
   return {
     props: {
+      // userveryfite: operations,
+      // projects: incidents,
       userveryfite,
     },
   };

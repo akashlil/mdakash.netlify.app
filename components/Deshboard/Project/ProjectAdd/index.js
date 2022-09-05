@@ -12,11 +12,11 @@ const ProjectAdd = () => {
     event.preventDefault();
     setProjectDataLoaded(true);
     const data = {
-      tittle: event.target.tittle.value,
+      title: event.target.title.value,
       imagelink: event.target.imagelink.value,
       livelink: event.target.livelink.value,
     };
-    if (!data.tittle || !data.imagelink || !data.livelink) {
+    if (!data.title || !data.imagelink || !data.livelink) {
       setMassage(true);
       setProjectDataLoaded(false);
       return false;
@@ -61,16 +61,16 @@ const ProjectAdd = () => {
               onSubmit={projectSubmit}
             >
               <div className="mb-3 ">
-                <label htmlFor="tittle" className="form-label">
-                  Tittle
+                <label htmlFor="title" className="form-label">
+                  title
                 </label>
                 <input
                   type="text"
                   required
                   className="form-control p-2"
-                  id="tittle"
-                  name="tittle"
-                  placeholder="Tittle"
+                  id="title"
+                  name="title"
+                  placeholder="title"
                 />
               </div>
 

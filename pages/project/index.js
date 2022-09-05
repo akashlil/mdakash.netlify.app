@@ -1,16 +1,9 @@
 import projectStyle from "./project.module.css";
 import LoadData from "@components/LoadData/LoadData";
+import swrFetchData from "hook/swrFetchData";
 
-const Project = ({ projects }) => {
-  // const [projects, setProject] = useState(null);
-
-  // useEffect(() => {
-  //   fetch("/api/projects")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setProject(data);
-  //     });
-  // }, []);
+const Project = () => {
+  const projects = swrFetchData("/api/projects");
 
   return (
     <div>
@@ -56,12 +49,12 @@ const Project = ({ projects }) => {
 
 export default Project;
 
-export async function getServerSideProps(req, res) {
-  const respones = await fetch("https://mdakash.netlify.app/api/projects");
-  const projects = await respones.json();
-  return {
-    props: {
-      projects,
-    },
-  };
-}
+// export async function getServerSideProps(req, res) {
+//   const respones = await fetch("https://mdakash.netlify.app/api/projects");
+//   const projects = await respones.json();
+//   return {
+//     props: {
+//       projects,
+//     },
+//   };
+// }
