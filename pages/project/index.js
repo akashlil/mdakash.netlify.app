@@ -1,17 +1,18 @@
 import projectStyle from "./project.module.css";
 import { useEffect, useState } from "react";
 import LoadData from "@components/LoadData/LoadData";
+import { async } from "@firebase/util";
 
-const Project = () => {
-  const [projects, setProject] = useState(null);
+const Project = ({ projects }) => {
+  // const [projects, setProject] = useState(null);
 
-  useEffect(() => {
-    fetch("/api/projects")
-      .then((res) => res.json())
-      .then((data) => {
-        setProject(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("/api/projects")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setProject(data);
+  //     });
+  // }, []);
 
   return (
     <div>
@@ -56,3 +57,13 @@ const Project = () => {
 };
 
 export default Project;
+
+export async function getServerSideProps(req, res) {
+  const respones = await fetch("https://mdakash.netlify.app/api/projects");
+  const projects = await respones.json();
+  return {
+    props: {
+      projects,
+    },
+  };
+}
