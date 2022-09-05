@@ -1,33 +1,39 @@
-import Script from "next/script";
 import { useEffect, useState } from "react";
 
 const ProjectRemove = () => {
-  /* dataTable */
-  $(document).ready(function () {
-    $("#book_details").DataTable({
-      bSort: true,
-      width: "100%",
-      destroy: true,
-      columnDefs: [{}],
-    });
-  });
-  /* dataTable end */
+  const [projectsall, setProjectall] = useState([]);
 
   const count = 1;
-  const [projectsall, setProjectall] = useState([]);
+
   useEffect(() => {
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data) => {
         setProjectall(data);
       });
-  }, []);
+  }, [projectsall]);
+
+  const projectDelete = (id) => {
+    try {
+      fetch(`/api/projects/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const updateTable = projectsall.filter(
+            (projects) => projects._id !== id
+          );
+          console.log(updateTable);
+          setProjectall(updateTable);
+        });
+    } catch (erro) {
+      console.log(erro);
+    }
+  };
+
   return (
     <div className="mt-2">
-      <Script
-        src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"
-        defer
-      ></Script>
       <div className="table-responsive bg-white rounded shodow">
         <table id="book_details" class="table table-dark table-striped display">
           <thead>
@@ -47,7 +53,12 @@ const ProjectRemove = () => {
                   <td> {project?.title?.slice(0, 20)}</td>
                   <td>{project?.livelink?.slice(0, 50)}</td>
                   <td>
-                    <button className="btn-sm btn btn-danger">Delete</button>
+                    <button
+                      className="btn-sm btn btn-danger"
+                      onClick={() => projectDelete(project?._id)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               );

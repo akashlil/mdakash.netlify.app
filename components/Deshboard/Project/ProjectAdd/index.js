@@ -23,7 +23,7 @@ const ProjectAdd = () => {
     }
     setMassage(false);
     try {
-      fetch("http://localhost:3000/api/projects", {
+      fetch("/api/projects", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const ProjectAdd = () => {
   return (
     <div className="mt-5">
       <div className="col-md-9 mx-auto">
-        <div className="shadow-lg text-dark bg-body rounded">
+        <div className="shadow-lg text-dark text-white rounded  bg-dark">
           <div className="p-5">
             <h3 className="mb-3" style={{ color: "#3e34b5" }}>
               Project Add

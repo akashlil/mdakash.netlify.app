@@ -3,18 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 const firebaseSlice = createSlice({
   name: "firebase",
   initialState: {
-    user: "akas",
+    user: null,
   },
   reducers: {
     signIn: (state, action) => {
       state.user = action.payload.user;
     },
-    signOut: (state, action) => {
+    signOuts: (state, action) => {
       state.user = null;
     },
   },
 });
 
-export const { signIn, signOut } = firebaseSlice.actions;
+export const { signIn, signOuts } = firebaseSlice.actions;
 
 export default firebaseSlice;

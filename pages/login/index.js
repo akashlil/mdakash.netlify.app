@@ -2,34 +2,34 @@ import loginCss from "./login.module.css";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import firebaseInitializeApp from "../../firebase/firebase.init";
 import { signIn } from "../../rudex/slice/firebaseSlice";
 
-firebaseInitializeApp();
-
 const Loing = ({ succcfullUser }) => {
-  // const [succcfullUser, setsucccfullUser] = useState(succcfullUser);
   /* Google login */
   let googleProvider = new GoogleAuthProvider();
   let auth = getAuth();
-
+  const href = "/";
   let router = useRouter();
   const dispatch = useDispatch();
 
   const logIn = () => {
-    signInWithPopup(auth, googleProvider).then((res) => {
-      dispatch(
-        signIn({
-          user: res.user,
-        })
-      );
-    });
+    try {
+      signInWithPopup(auth, googleProvider).then((res) => {
+        dispatch(
+          signIn({
+            user: res.user,
+          })
+        );
+        router.push(href);
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
   /* Google login end*/
 
   /* google user */
-  const user = useSelector((state) => state.firebaseState.user);
-  console.log(user.email);
+  // const user = useSelector((state) => state.firebaseState.user);
   /* google user end*/
 
   /* show password */

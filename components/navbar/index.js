@@ -1,26 +1,24 @@
 import Link from "next/link";
 import navstyle from "./navbar.module.css";
-// import { useSelector, useDispatch } from "react-redux";
-// import { signOut, getAuth } from "firebase/auth";
-// import { logOut } from "../../store/firebaseSlice";
-// import firebaseinitializeApp from "../../firebase/firebase.init";
-// firebaseinitializeApp();
+import { useSelector, useDispatch } from "react-redux";
+import { signOut, getAuth } from "firebase/auth";
+import { signOuts } from "../../rudex/slice/firebaseSlice";
 
 export default function Navbar() {
   const logo = `https://i.ibb.co/StVKHKz/A-removebg-preview.png`;
 
-  // const user = useSelector((state) => state.firebaseState.user);
+  const user = useSelector((state) => state.firebaseState.user);
 
-  // const dispatch = useDispatch();
-  // const auth = getAuth();
-  // const logOuts = async () => {
-  //   try {
-  //     await signOut(auth);
-  //   } finally {
-  //     dispatch(logOut());
-  //   }
-  // };
-  let user = false;
+  const dispatch = useDispatch();
+  const auth = getAuth();
+  const logOuts = async () => {
+    try {
+      await signOut(auth);
+    } finally {
+      dispatch(signOuts());
+    }
+  };
+  // let user = false;
 
   return (
     <nav className="container navbar navbar-expand-lg navbar-light py-5">
@@ -96,7 +94,7 @@ export default function Navbar() {
                 </a>
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               {!user ? (
                 <Link href="/login">
                   <a
@@ -116,12 +114,12 @@ export default function Navbar() {
                     navstyle.customBtn,
                     navstyle.btn5,
                   ].join(" ")}
-                  /* onClick={logOuts} */
+                  onClick={logOuts}
                 >
                   LogOut
                 </button>
               )}
-            </li>
+            </li> */}
 
             {/* <li className={navstyle.navitem}>
               <Link className="nav-link" href="/addservices">

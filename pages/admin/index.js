@@ -5,7 +5,7 @@ import MainContent from "@components/LayoutDashboard/MainContent/MainContent";
 import { useRouter } from "next/router";
 import useSessionStorage from "../../hook/useSessionStorage";
 
-const Admin = ({ userveryfite, projectsall }) => {
+const Admin = ({ userveryfite }) => {
   let userDatastringfy = useSessionStorage("user");
   const [userData] = userveryfite;
 
