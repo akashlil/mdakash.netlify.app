@@ -1,7 +1,5 @@
 import projectStyle from "./project.module.css";
-import { useEffect, useState } from "react";
 import LoadData from "@components/LoadData/LoadData";
-import { async } from "@firebase/util";
 
 const Project = ({ projects }) => {
   // const [projects, setProject] = useState(null);

@@ -20,11 +20,9 @@ const ProjectRemove = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           const updateTable = projectsall.filter(
             (projects) => projects._id !== id
           );
-          console.log(updateTable);
           setProjectall(updateTable);
         });
     } catch (erro) {

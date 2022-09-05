@@ -4,9 +4,7 @@ import { useRouter } from "next/router";
 const Layout = ({ children }) => {
   const router = useRouter();
   const adminRouer = router?.query?.p ? router?.query?.p : "admin";
-  console.log(adminRouer);
 
-  console.log(router.asPath);
   let showNavBar = true;
   if (router.asPath == "/login") {
     showNavBar = false;

@@ -51,7 +51,7 @@ const Loing = ({ succcfullUser }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const [userAdmin] = succcfullUser;
-    console.log(userAdmin);
+
     const data = {
       email: event.target.email.value,
       password: event.target.password.value,

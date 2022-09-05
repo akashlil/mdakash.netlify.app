@@ -5,9 +5,26 @@ import store from "../rudex/store";
 import Script from "next/script";
 import LoadDataAuthStateChanged from "@components/layout/LoadData/LoadData";
 import firebaseinitializeApp from "../firebase/firebase.init";
+import { useRouter } from "next/router";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 
 function Application({ Component, pageProps }) {
   firebaseinitializeApp();
+
+  const router = useRouter();
+
+  NProgress.configure({ showSpinner: false });
+  router.events?.on("routeChangeStart", () => {
+    NProgress.start();
+  });
+  router.events?.on("routeChangeComplete", () => {
+    NProgress.done();
+  });
+  router.events?.on("routeChangeError", () => {
+    NProgress.done();
+  });
+
   return (
     <div>
       <link
