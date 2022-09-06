@@ -15,7 +15,7 @@ const Project = ({ projects }) => {
             <div className="col" key={project._id}>
               <div className="card h-100">
                 <img
-                  src={project?.imageslink}
+                  src={`${project?.imagelink}`}
                   className="card-img-top"
                   alt="..."
                 />
