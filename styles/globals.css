@@ -31,3 +31,25 @@ ul>li{
   list-style: none !important;
 }
 
+
+
+/* dashboard  */
+:root {
+  --offcanvas-width: 270px;
+  --topNavbarHeight: 56px;
+
+}
+
+@media only screen and (min-width: 992px) {
+
+   .offcanvas-backdrop {
+      display: none !important;
+  } 
+
+  .mainContien {
+      margin-left: var(--offcanvas-width);
+  }
+
+}
+
+/* dashboard end */

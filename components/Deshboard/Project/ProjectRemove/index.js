@@ -33,7 +33,10 @@ const ProjectRemove = () => {
   return (
     <div className="mt-2">
       <div className="table-responsive bg-white rounded shodow">
-        <table id="book_details" class="table table-dark table-striped display">
+        <table
+          id="book_details"
+          className="table table-dark table-striped display"
+        >
           <thead>
             <tr>
               <th scope="col">#</th>

@@ -1,16 +1,17 @@
 import React from "react";
+import SideBar from "../SideBar/SideBar";
 import TobBar from "../TopBar/TobBar";
 
 const MainContent = ({ children }) => {
   return (
     <div className="container-fluid px-0">
       <TobBar></TobBar>
-
-      <div className="container">
-        <div className="row">
-          <div>{children}</div>
+      <SideBar></SideBar>
+      <main className="mt-5 pt-3 mainContien">
+        <div className="container-fluid">
+          <div className="row">{children}</div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };

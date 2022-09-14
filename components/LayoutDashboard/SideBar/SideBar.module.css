@@ -1,0 +1,28 @@
+.sidebarlink {
+    display: flex !important;
+    align-items: center;
+  }
+  
+  .sidebarlink .righticon {
+    display: inline-flex !important;
+  }
+  
+  .sidebarlink[aria-expanded="true"] .righticon {
+    transform: rotate(180deg);
+    transition: all ease 0.25s;
+  }
+
+  .sidebarnav {
+    max-width: var(--offcanvas-width) !important;
+  
+  }
+
+  @media only screen and (min-width: 992px) {
+    .sidebarnav {
+        transform: none !important;
+        visibility: visible !important;
+        top: var(--topNavbarHeight) !important;
+        height: calc(100% - var(--topNavbarHeight));
+  
+    }
+  }

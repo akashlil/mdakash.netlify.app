@@ -13,11 +13,24 @@ const TobBar = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <div className="container my-3">
-          <Link href="/admin">
-            <a className="navbar-brand">DashBoard</a>
-          </Link>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div className="container-fluid">
+          <button
+            className="navbar-toggler me-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample"
+          >
+            <span
+              className="navbar-toggler-icon"
+              data-bs-target="#offcanvasExample"
+            ></span>
+          </button>
+
+          <a className="navbar-brand fw-bold text-uppercase me-auto" href="#">
+            Deshboard
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,19 +43,25 @@ const TobBar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link href={"/"}>
-                  <a className="nav-link " aria-current="page">
-                    Goto WebSite
-                  </a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Admin Add
-                </a>
-              </li>
+            <form className="d-flex ms-auto" role="search">
+              <div className="input-group my-3 my-lg-0">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Username"
+                  aria-label="Username"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  className="btn btn-outline-secondary"
+                  type="button"
+                  id="button-addon2"
+                >
+                  <i className="bi bi-search"></i>
+                </button>
+              </div>
+            </form>
+            <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -51,56 +70,29 @@ const TobBar = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Project
+                  <i className="bi bi-person-fill"></i>
                 </a>
-                <ul className="dropdown-menu dropdown-menu-dark">
+                <ul className="dropdown-menu dropdown-menu-end">
                   <li>
-                    <Link href="?p=projectadd">
-                      <a className="dropdown-item">Project add</a>
-                    </Link>
+                    <a className="dropdown-item" href="#">
+                      Action
+                    </a>
                   </li>
-                  <hr className="dropdown-divider" />
                   <li>
-                    <Link href="?p=projectremove">
-                      <a className="dropdown-item">Project Reomve</a>
-                    </Link>
+                    <a className="dropdown-item" href="#">
+                      Another action
+                    </a>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Project Deletes
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <ul className="navbar-nav me-5 ">
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Akash
-                </a>
-                <ul className="dropdown-menu  dropdown-menu-dark">
-                  <li>
+                  <li className="dropdown-item">
                     <a className="dropdown-item" onClick={logOutadmin}>
                       Log Out
                     </a>
                   </li>
-
                   <li>
                     <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Project Deletes
-                    </a>
                   </li>
                 </ul>
               </li>
