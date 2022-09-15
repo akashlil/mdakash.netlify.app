@@ -16,13 +16,13 @@ const Project = ({ projects }) => {
               <div className="card h-100">
                 <img
                   src={`${project?.imagelink}`}
-                  className="card-img-top"
+                  className="card-img-top h-100 w-100"
                   alt="..."
                 />
 
                 <div className="card-body">
                   <h5 className="card-title text-capitalize">
-                    {project?.title?.slice(0, 20)}
+                    {project?.title?.slice(0, 26)}
                   </h5>
                   <a
                     className={["card-text", projectStyle.couser].join(" ")}

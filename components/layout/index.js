@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   }
   return (
     <>
-      {showNavBar && <Navbar />}
+      {router.pathname !== "/404" && showNavBar && <Navbar />}
       <main>{children}</main>
     </>
   );
