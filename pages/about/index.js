@@ -5,10 +5,10 @@ const About = () => {
   return (
     <div className="container">
       <div
-        className="row g-0 text-center justify-content-cente align-items-center"
+        className="row g-0 text-center justify-content-cente"
         style={{ minHeight: "60vh" }}
       >
-        <div className="col-md-8 col-12 pe-md-5 ">
+        <div className="col-md-8 col-12 pe-md-5">
           <div className=" " data-aos="fade-right">
             <div className="">
               <h1>Md Akash</h1>
@@ -52,12 +52,21 @@ const About = () => {
                   </a>
                 </li>
               </ul>
+              <hr />
+              <ul>
+                <span className="fs-4">Education Qualification</span>
+                <li>Diploma(CSE) : Faridpur Polytechnic Institute</li>
+                <li className="mb-5">
+                  B.Sc. in Computer Science & Engineering :{" "}
+                  <span>Green University of Bangladesh</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <div className="col-md-4 col-12 ">
-          <div className="rounded-5 shadow-lg  p-4">
-            <img src={imgPro} className="img-fluid rounded-5 " alt="..." />
+        <div className="col-md-4 col-12">
+          <div className="rounded-5 shadow-lg p-4  mt-5">
+            <img src={imgPro} className="img-fluid rounded-5" alt="..." />
           </div>
         </div>
       </div>
