@@ -16,12 +16,15 @@ function Application({ Component, pageProps }) {
   const router = useRouter();
 
   NProgress.configure({ showSpinner: false });
+
   router.events?.on("routeChangeStart", () => {
     NProgress.start();
   });
+
   router.events?.on("routeChangeComplete", () => {
     NProgress.done();
   });
+
   router.events?.on("routeChangeError", () => {
     NProgress.done();
   });
