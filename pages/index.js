@@ -1,16 +1,17 @@
 import Head from "next/head";
 import Slider from "@components/Slider/Slider";
-import Meta from "@components/Meta";
+import Meta from "../components/Meta";
 
 export default function Home() {
   return (
-    <div className="container">
-      <Head>
-        <Meta title="Akash" desp="kjssjb" keywords="Profiler,protfilo" />
-      </Head>
-      <main>
-        <Slider />
-      </main>
+    <div>
+      <Meta title="Akash" desp="kjssjb" keywords="protfilo" />
+
+      <div className="container">
+        <main>
+          <Slider />
+        </main>
+      </div>
     </div>
   );
 }
