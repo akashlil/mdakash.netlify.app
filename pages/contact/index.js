@@ -1,11 +1,7 @@
 import iconConatct from "./contact.module.css";
-import Head from "next/head";
-import Meta from "@components/Meta";
 const Contact = () => {
   return (
     <>
-      <Meta title="Akash" desp="kjssjb" keywords="protfilo" />
-
       <div className="container">
         <div className="row mt-5 gap-lg-0 gap-5">
           <div className="col-md-6  order-lg-0 order-2">

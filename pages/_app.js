@@ -8,6 +8,7 @@ import firebaseinitializeApp from "../firebase/firebase.init";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import Meta from "@components/Meta";
 
 function Application({ Component, pageProps }) {
   firebaseinitializeApp();
@@ -27,6 +28,7 @@ function Application({ Component, pageProps }) {
 
   return (
     <>
+      <Meta title="Akash" desp="kjssjb" keywords="protfilo" />
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"

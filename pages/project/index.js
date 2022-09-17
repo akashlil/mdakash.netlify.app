@@ -1,15 +1,12 @@
 import projectStyle from "./project.module.css";
 import LoadData from "@components/LoadData/LoadData";
 import swrFetchData from "hook/swrFetchData";
-import Head from "next/head";
-import Meta from "@components/Meta";
+
 const Project = ({ projects }) => {
   // const projects = swrFetchData("/api/projects");
 
   return (
     <>
-      <Meta title="Akash" desp="kjssjb" keywords="protfilo" />
-
       <div>
         <div className="container">
           <h1 className="text-center m-5">My Project</h1>

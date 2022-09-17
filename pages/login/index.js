@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { signIn } from "../../rudex/slice/firebaseSlice";
-import Meta from "@components/Meta";
 
 const Loing = ({ succcfullUser }) => {
   /* Google login */
@@ -78,7 +77,6 @@ const Loing = ({ succcfullUser }) => {
   /* from data submit end */
   return (
     <div>
-      <Meta title="Akash" desp="kjssjb" keywords="protfilo" />
       <div className="container-fluid">
         <div className="row">
           <div className="d-grid gap-2 col-md-4 col-12">

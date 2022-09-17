@@ -1,13 +1,9 @@
-import Meta from "@components/Meta";
-import Head from "next/head";
 import hederColor from "./about.module.css";
 const About = () => {
   const imgPro = "https://i.ibb.co/Gsqv4D7/Untitled-design-1.png";
 
   return (
     <>
-      <Meta title="Akash" desp="kjssjb" keywords="protfilo" />
-
       <div className="container">
         <div
           className="row g-0 text-center justify-content-cente"
