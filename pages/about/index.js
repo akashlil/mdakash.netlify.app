@@ -9,7 +9,7 @@ const About = () => {
           className="row g-0 text-center justify-content-cente"
           style={{ minHeight: "60vh" }}
         >
-          <div className="col-md-8 col-12 pe-md-5">
+          <div className="col-md-8 col-12 pe-md-5 order-lg-0 order-2">
             <div className=" " data-aos="fade-right">
               <div className="">
                 <h1>Md Akash</h1>
@@ -66,8 +66,8 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-12">
-            <div className="rounded-5 shadow-lg p-4  mt-5">
+          <div className="col-md-4 col-12 order-lg-0 order-1 p-lg-0 mb-5 mb-lg-0">
+            <div className="rounded-5 shadow-lg p-3">
               <img src={imgPro} className="img-fluid rounded-5" alt="..." />
             </div>
           </div>
